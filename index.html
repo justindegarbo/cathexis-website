@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cathexis - Embodied Tools for Calm</title>
+    <meta name="description" content="Designed by a therapist. Feel tension in your body? Cathexis guides you through embodied techniques to release stress, ground yourself, and reconnect with your body.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0f;
+            --card-bg: #141419;
+            --accent: #7eb8da;
+            --accent-glow: rgba(126, 184, 218, 0.3);
+            --text-primary: #f5f5f7;
+            --text-secondary: #a1a1a6;
+            --text-muted: #6e6e73;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        /* Gradient background */
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(126, 184, 218, 0.15) 0%, transparent 50%),
+                        radial-gradient(ellipse at 80% 50%, rgba(126, 184, 218, 0.08) 0%, transparent 40%),
+                        var(--bg-dark);
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Header */
+        header {
+            padding: 24px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+        }
+        
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 80px 0 60px;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(126, 184, 218, 0.1);
+            border: 1px solid rgba(126, 184, 218, 0.2);
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--accent);
+            margin-bottom: 32px;
+        }
+        
+        .hero h1 {
+            font-size: clamp(40px, 8vw, 64px);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        
+        .app-store-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 28px;
+            background: var(--text-primary);
+            color: var(--bg-dark);
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .app-store-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px var(--accent-glow);
+        }
+        
+        .app-store-btn svg {
+            width: 24px;
+            height: 24px;
+        }
+        
+        /* Phone mockup */
+        .phone-mockup {
+            max-width: 300px;
+            margin: 60px auto 0;
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5),
+                        0 0 0 1px rgba(255, 255, 255, 0.1);
+        }
+        
+        .phone-mockup img {
+            width: 100%;
+            display: block;
+        }
+        
+        .phone-placeholder {
+            width: 100%;
+            aspect-ratio: 9/19.5;
+            background: linear-gradient(180deg, #1a1a24 0%, #0f0f14 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+        
+        /* Features */
+        .features {
+            padding: 80px 0;
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+        
+        .features > p {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 48px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            padding: 28px;
+        }
+        
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(126, 184, 218, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .feature-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+        
+        /* Techniques */
+        .techniques {
+            padding: 60px 0 80px;
+        }
+        
+        .techniques h2 {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            letter-spacing: -0.5px;
+        }
+        
+        .technique-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+        
+        .technique-tag {
+            padding: 10px 18px;
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        
+        /* Therapist */
+        .therapist {
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .therapist-card {
+            max-width: 600px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(126, 184, 218, 0.1) 0%, rgba(126, 184, 218, 0.02) 100%);
+            border: 1px solid rgba(126, 184, 218, 0.2);
+            border-radius: 24px;
+            padding: 40px;
+        }
+        
+        .therapist-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        
+        .therapist-card p {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+        
+        .copyright {
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+        
+        /* Mobile adjustments */
+        @media (max-width: 640px) {
+            .hero {
+                padding: 60px 0 40px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+                letter-spacing: -1px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .features h2, .techniques h2 {
+                font-size: 24px;
+            }
+            
+            .phone-mockup {
+                max-width: 240px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+    
+    <header>
+        <div class="container">
+            <div class="logo">Cathexis</div>
+        </div>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-badge">
+                    <span>✦</span>
+                    Designed by a therapist
+                </div>
+                
+                <h1>Your body knows.<br>Learn to listen.</h1>
+                
+                <p>Feel tension in your body? Cathexis guides you through embodied techniques to release stress, ground yourself, and reconnect with your body.</p>
+                
+                <a href="#" class="app-store-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/>
+                    </svg>
+                    Download on the App Store
+                </a>
+                
+                <div class="phone-mockup">
+                    <div class="phone-placeholder">
+                        Screenshot coming soon
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="features">
+            <div class="container">
+                <h2>How it works</h2>
+                <p>Simple, effective, body-first healing</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">👆</div>
+                        <h3>Notice where you feel it</h3>
+                        <p>Tap the body region where you're holding tension, stress, or discomfort.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Get matched interventions</h3>
+                        <p>Choose from 40+ embodied techniques specifically matched to your needs.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🧘</div>
+                        <h3>Follow guided sessions</h3>
+                        <p>Voice guidance, calming visuals, and gentle haptics guide you through each exercise.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Track your patterns</h3>
+                        <p>Learn what your body is telling you with insights that reveal patterns over time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="techniques">
+            <div class="container">
+                <h2>40+ Embodied Techniques</h2>
+                
+                <div class="technique-tags">
+                    <div class="technique-tag">Box Breathing</div>
+                    <div class="technique-tag">Physiological Sigh</div>
+                    <div class="technique-tag">4-7-8 Breathing</div>
+                    <div class="technique-tag">Butterfly Hug</div>
+                    <div class="technique-tag">Bilateral Tapping</div>
+                    <div class="technique-tag">5-4-3-2-1 Grounding</div>
+                    <div class="technique-tag">Body Scan</div>
+                    <div class="technique-tag">Progressive Relaxation</div>
+                    <div class="technique-tag">Urge Surfing</div>
+                    <div class="technique-tag">Container Visualization</div>
+                    <div class="technique-tag">Tension Release</div>
+                    <div class="technique-tag">Anchoring</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="therapist">
+            <div class="container">
+                <div class="therapist-card">
+                    <h3>Built on clinical practice</h3>
+                    <p>Every technique in Cathexis comes from real interventions used with real clients. This isn't generic meditation—it's targeted, body-based healing grounded in neuroscience.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="mailto:cathexisapp@gmail.com">Contact</a>
+            </div>
+            <p class="copyright">© 2024 Cathexis. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
