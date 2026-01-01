@@ -18,11 +18,7 @@
             --warning: #fbbf24;
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -31,11 +27,7 @@
             line-height: 1.7;
         }
         
-        .container {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
+        .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
         
         header {
             padding: 24px 0;
@@ -49,9 +41,7 @@
             text-decoration: none;
         }
         
-        main {
-            padding: 48px 0 80px;
-        }
+        main { padding: 48px 0 80px; }
         
         h1 {
             font-size: 32px;
@@ -85,14 +75,8 @@
             font-size: 14px;
         }
         
-        .warning-box ul {
-            margin-top: 12px;
-            padding-left: 20px;
-        }
-        
-        .warning-box li {
-            margin-bottom: 6px;
-        }
+        .warning-box ul { margin-top: 12px; padding-left: 20px; }
+        .warning-box li { margin-bottom: 6px; }
         
         h2 {
             font-size: 20px;
@@ -102,10 +86,15 @@
             color: var(--text-primary);
         }
         
-        p {
-            color: var(--text-secondary);
-            margin-bottom: 16px;
+        h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 16px;
+            margin-bottom: 8px;
+            color: var(--text-primary);
         }
+        
+        p { color: var(--text-secondary); margin-bottom: 16px; }
         
         ul {
             color: var(--text-secondary);
@@ -113,17 +102,11 @@
             padding-left: 24px;
         }
         
-        li {
-            margin-bottom: 8px;
-        }
+        li { margin-bottom: 8px; }
         
-        strong {
-            color: var(--text-primary);
-        }
+        strong { color: var(--text-primary); }
         
-        a {
-            color: var(--accent);
-        }
+        a { color: var(--accent); }
         
         footer {
             padding: 24px 0;
@@ -144,9 +127,7 @@
             font-size: 14px;
         }
         
-        .footer-links a:hover {
-            color: var(--text-primary);
-        }
+        .footer-links a:hover { color: var(--text-primary); }
     </style>
 </head>
 <body>
@@ -159,7 +140,7 @@
     <main>
         <div class="container">
             <h1>Terms of Service</h1>
-            <p class="last-updated">Last Updated: December 15, 2024</p>
+            <p class="last-updated">Last Updated: January 1, 2025</p>
             
             <p>Please read these Terms of Service ("Terms") carefully before using the Cathexis mobile application ("the App").</p>
             
@@ -167,12 +148,14 @@
             <p>By downloading, installing, or using Cathexis, you agree to be bound by these Terms. If you do not agree to these Terms, do not use the App.</p>
             
             <h2>2. Description of Service</h2>
-            <p>Cathexis is a somatic wellness application that provides:</p>
+            <p>Cathexis is a body awareness and interoceptive training application that provides:</p>
             <ul>
-                <li>Guided body-awareness exercises</li>
-                <li>Breathing and grounding techniques</li>
-                <li>Body check-in tracking</li>
-                <li>Educational content about somatic practices</li>
+                <li>Guided body-awareness check-ins</li>
+                <li>Breathing, grounding, and movement techniques</li>
+                <li>Pattern tracking and insights</li>
+                <li>Journal and reflection features</li>
+                <li>Resolution progress tracking</li>
+                <li>Educational content about embodied practices and neuroscience</li>
             </ul>
             
             <div class="warning-box">
@@ -183,23 +166,35 @@
                     <li>A replacement for therapy, counseling, or psychiatric care</li>
                     <li>A crisis intervention service</li>
                     <li>Medical advice or diagnosis</li>
+                    <li>A medical device</li>
                 </ul>
                 <p style="margin-top: 16px;"><strong>If you are experiencing a mental health crisis, suicidal thoughts, or medical emergency:</strong></p>
                 <ul>
                     <li>Call 911 (US) or your local emergency number</li>
                     <li>Contact the 988 Suicide & Crisis Lifeline (call or text 988)</li>
+                    <li>Text HOME to 741741 (Crisis Text Line)</li>
                     <li>Go to your nearest emergency room</li>
                     <li>Contact a mental health professional</li>
                 </ul>
             </div>
             
-            <p>The techniques in this app are drawn from therapeutic practices, but using an app is not the same as working with a licensed professional. Always consult with a qualified healthcare provider for mental health concerns.</p>
+            <p>The techniques in this app are drawn from published neuroscience research and established clinical practices, but using an app is not the same as working with a licensed professional. Always consult with a qualified healthcare provider for mental health concerns.</p>
+            
+            <h2>3. No Medical Claims</h2>
+            <p>Cathexis does not:</p>
+            <ul>
+                <li>Diagnose any physical or mental health condition</li>
+                <li>Provide medical advice or treatment recommendations</li>
+                <li>Claim to cure, treat, or prevent any condition</li>
+                <li>Make claims about specific outcomes or results</li>
+            </ul>
+            <p>Pattern detection and insights are observational, not diagnostic. Individual responses to any technique vary significantly.</p>
             
             <h2>4. Subscription & Payments</h2>
-            <h3 style="font-size: 16px; margin-top: 16px; margin-bottom: 8px;">Free Trial</h3>
+            <h3>Free Trial</h3>
             <p>Cathexis offers a 7-day free trial. You will not be charged during the trial period. You may cancel at any time before the trial ends to avoid being charged.</p>
             
-            <h3 style="font-size: 16px; margin-top: 16px; margin-bottom: 8px;">Subscription</h3>
+            <h3>Subscription</h3>
             <ul>
                 <li>Payment will be charged to your Apple ID account at confirmation of purchase</li>
                 <li>Subscription automatically renews unless canceled at least 24 hours before the end of the current period</li>
@@ -207,7 +202,7 @@
                 <li>You can manage and cancel subscriptions in your Apple ID Account Settings</li>
             </ul>
             
-            <h3 style="font-size: 16px; margin-top: 16px; margin-bottom: 8px;">Refunds</h3>
+            <h3>Refunds</h3>
             <p>Refunds are handled by Apple according to their refund policy. We do not process refunds directly.</p>
             
             <h2>5. User Responsibilities</h2>
@@ -217,6 +212,7 @@
                 <li>Not redistribute, modify, or reverse-engineer the App</li>
                 <li>Not use the App in any way that could harm yourself or others</li>
                 <li>Seek professional help if you are experiencing severe mental health symptoms</li>
+                <li>Use the App within its intended scope as a body awareness tool</li>
             </ul>
             
             <h2>6. Safety Plan Feature</h2>
@@ -228,7 +224,16 @@
                 <li>Should be used in conjunction with professional care if you are at risk</li>
             </ul>
             
-            <h2>7. Intellectual Property</h2>
+            <h2>7. Motion & Activity Data</h2>
+            <p>If you grant permission, Cathexis may access motion and activity data to provide smart notifications. This data is:</p>
+            <ul>
+                <li>Processed entirely on your device</li>
+                <li>Never transmitted to any server</li>
+                <li>Used only to provide contextually relevant reminders</li>
+            </ul>
+            <p>You can disable this feature at any time in Settings.</p>
+            
+            <h2>8. Intellectual Property</h2>
             <p>All content in Cathexis, including but not limited to text, graphics, images, audio, and the overall design, is the property of Cathexis and is protected by copyright and other intellectual property laws.</p>
             <p>You may not:</p>
             <ul>
@@ -237,7 +242,7 @@
                 <li>Claim ownership of any App content</li>
             </ul>
             
-            <h2>8. Disclaimer of Warranties</h2>
+            <h2>9. Disclaimer of Warranties</h2>
             <p>Cathexis is provided "as is" and "as available" without warranties of any kind, either express or implied, including but not limited to:</p>
             <ul>
                 <li>Implied warranties of merchantability</li>
@@ -251,7 +256,7 @@
                 <li>Results from using the App will be accurate or reliable</li>
             </ul>
             
-            <h2>9. Limitation of Liability</h2>
+            <h2>10. Limitation of Liability</h2>
             <p>To the maximum extent permitted by law, Cathexis and its creators shall not be liable for any:</p>
             <ul>
                 <li>Indirect, incidental, special, or consequential damages</li>
@@ -261,7 +266,7 @@
             </ul>
             <p>This limitation applies regardless of the legal theory (contract, tort, or otherwise) and even if we have been advised of the possibility of such damages.</p>
             
-            <h2>10. Indemnification</h2>
+            <h2>11. Indemnification</h2>
             <p>You agree to indemnify and hold harmless Cathexis, its creators, employees, and affiliates from any claims, damages, losses, or expenses (including legal fees) arising from:</p>
             <ul>
                 <li>Your use of the App</li>
@@ -269,10 +274,10 @@
                 <li>Your violation of any rights of another person or entity</li>
             </ul>
             
-            <h2>11. Changes to Terms</h2>
+            <h2>12. Changes to Terms</h2>
             <p>We reserve the right to modify these Terms at any time. We will notify users of significant changes through the App or by other means. Your continued use of the App after changes constitutes acceptance of the new Terms.</p>
             
-            <h2>12. Termination</h2>
+            <h2>13. Termination</h2>
             <p>We may terminate or suspend your access to the App at any time, without notice, for conduct that we believe:</p>
             <ul>
                 <li>Violates these Terms</li>
@@ -280,20 +285,20 @@
                 <li>Is illegal or violates any applicable law</li>
             </ul>
             
-            <h2>13. Governing Law</h2>
+            <h2>14. Governing Law</h2>
             <p>These Terms shall be governed by and construed in accordance with the laws of the State of California, United States, without regard to its conflict of law provisions.</p>
             
-            <h2>14. Contact Information</h2>
+            <h2>15. Contact Information</h2>
             <p>For questions about these Terms, please contact:</p>
-            <p><strong>Email:</strong> <a href="mailto:cathexisapp@gmail.com">cathexisapp@gmail.com</a></p>
+            <p><strong>Email:</strong> <a href="mailto:support@cathexis.health">support@cathexis.health</a></p>
             
-            <h2>15. Severability</h2>
+            <h2>16. Severability</h2>
             <p>If any provision of these Terms is found to be unenforceable, the remaining provisions will continue in full force and effect.</p>
             
-            <h2>16. Entire Agreement</h2>
+            <h2>17. Entire Agreement</h2>
             <p>These Terms, together with our <a href="privacy.html">Privacy Policy</a>, constitute the entire agreement between you and Cathexis regarding the use of the App.</p>
             
-            <p style="margin-top: 40px;"><em>By using Cathexis, you acknowledge that you have read, understood, and agree to these Terms of Service.</em></p>
+            <p style="margin-top: 40px;"><em>By using Cathexis, you acknowledge that you have read and understood this information, and you agree to use the app within its intended scope as a body awareness and interoceptive training tool.</em></p>
         </div>
     </main>
     
@@ -303,7 +308,7 @@
                 <a href="index.html">Home</a>
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="terms.html">Terms of Service</a>
-                <a href="mailto:cathexisapp@gmail.com">Contact</a>
+                <a href="mailto:support@cathexis.health">Contact</a>
             </div>
         </div>
     </footer>

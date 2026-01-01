@@ -3,114 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cathexis - Embodied Tools for Calm</title>
-    <meta name="description" content="Designed by a therapist. Feel tension in your body? Cathexis guides you through embodied techniques to release stress, ground yourself, and reconnect with your body.">
+    <title>Cathexis - Your Body Speaks. Learn to Listen.</title>
+    <meta name="description" content="Cathexis builds interoceptive awareness — the skill of sensing and understanding your body's signals. Grounded in neuroscience, not wellness trends.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-dark: #0a0a0f;
+            --bg-section: #0f0f14;
             --card-bg: #141419;
             --accent: #7eb8da;
+            --accent-warm: #daa07e;
             --accent-glow: rgba(126, 184, 218, 0.3);
             --text-primary: #f5f5f7;
             --text-secondary: #a1a1a6;
             --text-muted: #6e6e73;
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--bg-dark);
             color: var(--text-primary);
-            line-height: 1.6;
-            min-height: 100vh;
+            line-height: 1.7;
         }
         
-        /* Gradient background */
         .bg-gradient {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(ellipse at 50% 0%, rgba(126, 184, 218, 0.15) 0%, transparent 50%),
-                        radial-gradient(ellipse at 80% 50%, rgba(126, 184, 218, 0.08) 0%, transparent 40%),
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(126, 184, 218, 0.12) 0%, transparent 50%),
+                        radial-gradient(ellipse at 80% 50%, rgba(126, 184, 218, 0.06) 0%, transparent 40%),
                         var(--bg-dark);
             z-index: -1;
         }
         
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        .container-narrow { max-width: 720px; margin: 0 auto; padding: 0 24px; }
         
-        /* Header */
         header {
             padding: 24px 0;
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
+        
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
         
         .logo {
             font-size: 24px;
             font-weight: 700;
             color: var(--text-primary);
             letter-spacing: -0.5px;
+            text-decoration: none;
         }
         
-        /* Hero */
+        nav { display: flex; gap: 32px; }
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover { color: var(--text-primary); }
+        
         .hero {
             text-align: center;
-            padding: 80px 0 60px;
+            padding: 160px 0 100px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
         }
         
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            background: rgba(126, 184, 218, 0.1);
-            border: 1px solid rgba(126, 184, 218, 0.2);
-            border-radius: 20px;
-            font-size: 14px;
-            color: var(--accent);
-            margin-bottom: 32px;
-        }
+        .hero-content { width: 100%; }
         
         .hero h1 {
-            font-size: clamp(40px, 8vw, 64px);
+            font-size: clamp(44px, 8vw, 72px);
             font-weight: 700;
-            line-height: 1.1;
-            letter-spacing: -2px;
+            line-height: 1.05;
+            letter-spacing: -3px;
             margin-bottom: 24px;
+        }
+        
+        .hero h1 span {
             background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         
-        .hero p {
-            font-size: 18px;
+        .hero-subtitle {
+            font-size: 20px;
             color: var(--text-secondary);
             max-width: 600px;
             margin: 0 auto 40px;
+            line-height: 1.6;
         }
         
         .app-store-btn {
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            padding: 14px 28px;
+            padding: 16px 32px;
             background: var(--text-primary);
             color: var(--bg-dark);
             text-decoration: none;
-            border-radius: 12px;
+            border-radius: 14px;
             font-weight: 600;
             font-size: 16px;
             transition: transform 0.2s, box-shadow 0.2s;
@@ -118,203 +121,281 @@
         
         .app-store-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 40px var(--accent-glow);
+            box-shadow: 0 20px 60px var(--accent-glow);
         }
         
-        .app-store-btn svg {
-            width: 24px;
-            height: 24px;
+        .app-store-btn svg { width: 24px; height: 24px; }
+        
+        .problem { padding: 120px 0; background: var(--bg-section); }
+        .problem-content { text-align: center; }
+        
+        .problem h2 {
+            font-size: 32px;
+            font-weight: 400;
+            line-height: 1.5;
+            max-width: 700px;
+            margin: 0 auto 32px;
+            color: var(--text-secondary);
         }
         
-        /* Phone mockup */
-        .phone-mockup {
-            max-width: 300px;
-            margin: 60px auto 0;
-            border-radius: 40px;
-            overflow: hidden;
-            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5),
-                        0 0 0 1px rgba(255, 255, 255, 0.1);
+        .problem h2 em {
+            color: var(--text-primary);
+            font-style: normal;
+            font-weight: 600;
         }
         
-        .phone-mockup img {
-            width: 100%;
-            display: block;
+        .problem-highlight {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--accent);
+            font-style: italic;
         }
         
-        .phone-placeholder {
-            width: 100%;
-            aspect-ratio: 9/19.5;
-            background: linear-gradient(180deg, #1a1a24 0%, #0f0f14 100%);
+        .circle-section { padding: 120px 0; }
+        
+        .section-header { text-align: center; margin-bottom: 64px; }
+        .section-header h2 {
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            margin-bottom: 16px;
+        }
+        .section-header p { font-size: 18px; color: var(--text-secondary); }
+        
+        .circle-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .circle-step {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            padding: 32px 24px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .circle-step::after {
+            content: '→';
+            position: absolute;
+            right: -18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 20px;
+        }
+        
+        .circle-step:last-child::after { display: none; }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: rgba(126, 184, 218, 0.15);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--text-muted);
-            font-size: 14px;
-        }
-        
-        /* Features */
-        .features {
-            padding: 80px 0;
-        }
-        
-        .features h2 {
-            text-align: center;
-            font-size: 32px;
+            margin: 0 auto 16px;
             font-weight: 700;
-            margin-bottom: 16px;
-            letter-spacing: -1px;
+            color: var(--accent);
+            font-size: 18px;
         }
         
-        .features > p {
-            text-align: center;
-            color: var(--text-secondary);
-            margin-bottom: 48px;
+        .circle-step h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
+        
+        .circle-step p { font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
+        
+        .features { padding: 120px 0; background: var(--bg-section); }
         
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
         }
         
         .feature-card {
             background: var(--card-bg);
             border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 20px;
-            padding: 28px;
+            border-radius: 24px;
+            padding: 36px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(126, 184, 218, 0.3);
         }
         
         .feature-icon {
-            width: 48px;
-            height: 48px;
+            width: 56px;
+            height: 56px;
             background: rgba(126, 184, 218, 0.1);
-            border-radius: 12px;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-        
-        .feature-card h3 {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        
-        .feature-card p {
-            color: var(--text-secondary);
-            font-size: 15px;
-        }
-        
-        /* Techniques */
-        .techniques {
-            padding: 60px 0 80px;
-        }
-        
-        .techniques h2 {
-            text-align: center;
+            margin-bottom: 24px;
             font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 40px;
-            letter-spacing: -0.5px;
         }
         
-        .technique-tags {
+        .feature-card h3 { font-size: 20px; font-weight: 600; margin-bottom: 12px; }
+        .feature-card p { color: var(--text-secondary); font-size: 15px; line-height: 1.6; }
+        
+        .science { padding: 120px 0; }
+        
+        .science-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+        
+        .science-text h2 {
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 24px;
+        }
+        
+        .science-text p { color: var(--text-secondary); margin-bottom: 16px; font-size: 16px; }
+        
+        .science-text .quote {
+            font-style: italic;
+            color: var(--accent);
+            font-size: 18px;
+            margin-top: 24px;
+            padding-left: 20px;
+            border-left: 3px solid var(--accent);
+        }
+        
+        .influences {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 24px;
+            padding: 36px;
+        }
+        
+        .influences h3 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        
+        .influence-list { display: flex; flex-wrap: wrap; gap: 12px; }
+        
+        .influence-tag {
+            padding: 8px 16px;
+            background: rgba(126, 184, 218, 0.1);
+            border-radius: 8px;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+        
+        .therapists { padding: 120px 0; background: var(--bg-section); }
+        
+        .therapist-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(126, 184, 218, 0.1) 0%, rgba(126, 184, 218, 0.02) 100%);
+            border: 1px solid rgba(126, 184, 218, 0.2);
+            border-radius: 32px;
+            padding: 60px;
+            text-align: center;
+        }
+        
+        .therapist-card h2 { font-size: 32px; font-weight: 700; margin-bottom: 20px; }
+        
+        .therapist-card p {
+            color: var(--text-secondary);
+            font-size: 17px;
+            margin-bottom: 16px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .therapist-features {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 12px;
+            gap: 16px;
+            margin-top: 32px;
         }
         
-        .technique-tag {
+        .therapist-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
             padding: 10px 18px;
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 10px;
             font-size: 14px;
             color: var(--text-secondary);
         }
         
-        /* Therapist */
-        .therapist {
-            padding: 60px 0;
-            text-align: center;
-        }
+        .therapist-feature span { color: var(--accent); }
         
-        .therapist-card {
-            max-width: 600px;
-            margin: 0 auto;
-            background: linear-gradient(135deg, rgba(126, 184, 218, 0.1) 0%, rgba(126, 184, 218, 0.02) 100%);
-            border: 1px solid rgba(126, 184, 218, 0.2);
-            border-radius: 24px;
-            padding: 40px;
-        }
+        .cta { padding: 120px 0; text-align: center; }
+        .cta h2 { font-size: 44px; font-weight: 700; letter-spacing: -1.5px; margin-bottom: 16px; }
+        .cta p { color: var(--text-secondary); font-size: 18px; margin-bottom: 40px; }
         
-        .therapist-card h3 {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
+        footer { padding: 48px 0; border-top: 1px solid rgba(255, 255, 255, 0.06); }
         
-        .therapist-card p {
-            color: var(--text-secondary);
-            font-size: 16px;
-        }
-        
-        /* Footer */
-        footer {
-            padding: 40px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-            text-align: center;
-        }
-        
-        .footer-links {
+        .footer-content {
             display: flex;
-            justify-content: center;
-            gap: 32px;
-            margin-bottom: 24px;
+            justify-content: space-between;
+            align-items: center;
             flex-wrap: wrap;
+            gap: 24px;
         }
         
+        .footer-links { display: flex; gap: 32px; }
         .footer-links a {
             color: var(--text-muted);
             text-decoration: none;
             font-size: 14px;
             transition: color 0.2s;
         }
+        .footer-links a:hover { color: var(--text-primary); }
         
-        .footer-links a:hover {
-            color: var(--text-primary);
-        }
+        .copyright { color: var(--text-muted); font-size: 13px; }
         
-        .copyright {
+        .disclaimer {
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 12px;
             color: var(--text-muted);
-            font-size: 13px;
+            text-align: center;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
-        /* Mobile adjustments */
-        @media (max-width: 640px) {
-            .hero {
-                padding: 60px 0 40px;
-            }
-            
-            .hero h1 {
-                font-size: 36px;
-                letter-spacing: -1px;
-            }
-            
-            .hero p {
-                font-size: 16px;
-            }
-            
-            .features h2, .techniques h2 {
-                font-size: 24px;
-            }
-            
-            .phone-mockup {
-                max-width: 240px;
-            }
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .hero { padding: 120px 0 80px; min-height: auto; }
+            .hero h1 { font-size: 36px; letter-spacing: -1.5px; }
+            .hero-subtitle { font-size: 17px; }
+            .problem h2 { font-size: 24px; }
+            .section-header h2 { font-size: 28px; }
+            .circle-step::after { display: none; }
+            .science-content { grid-template-columns: 1fr; gap: 40px; }
+            .therapist-card { padding: 40px 24px; }
+            .cta h2 { font-size: 32px; }
+            .footer-content { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
@@ -323,109 +404,192 @@
     
     <header>
         <div class="container">
-            <div class="logo">Cathexis</div>
+            <div class="header-inner">
+                <a href="index.html" class="logo">Cathexis</a>
+                <nav>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#features">Features</a>
+                    <a href="#science">The Science</a>
+                    <a href="#therapists">For Therapists</a>
+                </nav>
+            </div>
         </div>
     </header>
     
     <main>
         <section class="hero">
             <div class="container">
-                <div class="hero-badge">
-                    <span>✦</span>
-                    Designed by a therapist
+                <div class="hero-content">
+                    <h1><span>Your body speaks.</span><br>Learn to listen.</h1>
+                    <p class="hero-subtitle">Cathexis builds interoceptive awareness — the skill of sensing and understanding your body's signals. Through guided check-ins, targeted interventions, and pattern tracking, transform body noise into body wisdom.</p>
+                    <a href="https://apps.apple.com/app/cathexis/id6756632094" class="app-store-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/>
+                        </svg>
+                        Download on the App Store
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="problem">
+            <div class="container-narrow">
+                <div class="problem-content">
+                    <h2>That tightness in your chest. The knot in your stomach. The tension you carry in your shoulders. <em>These aren't random. They're information.</em></h2>
+                    <p class="problem-highlight">What if you could hear what your body is trying to tell you?</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="circle-section" id="how-it-works">
+            <div class="container">
+                <div class="section-header">
+                    <h2>The Circle of Awareness</h2>
+                    <p>Five steps that turn body awareness into body wisdom</p>
                 </div>
                 
-                <h1>Your body knows.<br>Learn to listen.</h1>
+                <div class="circle-steps">
+                    <div class="circle-step">
+                        <div class="step-number">1</div>
+                        <h3>Notice</h3>
+                        <p>Pause. Where is sensation right now? The check-in is where everything begins.</p>
+                    </div>
+                    <div class="circle-step">
+                        <div class="step-number">2</div>
+                        <h3>Track</h3>
+                        <p>Your check-ins become patterns. See what single moments miss.</p>
+                    </div>
+                    <div class="circle-step">
+                        <div class="step-number">3</div>
+                        <h3>Intervene</h3>
+                        <p>Breathing, grounding, movement. Each technique with a why.</p>
+                    </div>
+                    <div class="circle-step">
+                        <div class="step-number">4</div>
+                        <h3>Reflect</h3>
+                        <p>Journal prompts connect body experience to meaning.</p>
+                    </div>
+                    <div class="circle-step">
+                        <div class="step-number">5</div>
+                        <h3>Resolve</h3>
+                        <p>Track progress on your original concerns over time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="features" id="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>What You Get</h2>
+                    <p>Tools for building a relationship with your body</p>
+                </div>
                 
-                <p>Feel tension in your body? Cathexis guides you through embodied techniques to release stress, ground yourself, and reconnect with your body.</p>
-                
-                <a href="#" class="app-store-btn">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🫀</div>
+                        <h3>Interactive Body Map</h3>
+                        <p>Tap where you feel sensation. Your body becomes a map of data — showing you where life lands, where tension lives, where emotion hides.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌬️</div>
+                        <h3>39 Guided Interventions</h3>
+                        <p>Breathing, grounding, movement, and bilateral stimulation techniques — each with audio guidance and the science of why it works.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Pattern Insights</h3>
+                        <p>See how your nervous system runs. Discover which influences land where. Track your most effective interventions over time.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔔</div>
+                        <h3>Smart Notifications</h3>
+                        <p>Gentle reminders based on your patterns, activity, and streaks. The app notices when you might need support.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📝</div>
+                        <h3>Journal & Reflection</h3>
+                        <p>Drive-based prompts help you connect body experience to life experience. What was your body trying to tell you?</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📄</div>
+                        <h3>Therapist Reports</h3>
+                        <p>Generate comprehensive PDF reports to share with your therapist — patterns, interventions, progress, and journal entries.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="science" id="science">
+            <div class="container">
+                <div class="science-content">
+                    <div class="science-text">
+                        <h2>Built on decades of neuroscience research</h2>
+                        <p>Cathexis integrates insights from affective neuroscience, predictive processing theory, and neuropsychoanalysis. Every technique has a mechanism. Every feature has a purpose.</p>
+                        <p>The body is the origin of psychic life — not a container for the mind, but the source from which mind emerges.</p>
+                        <p class="quote">"The ego is first and foremost a bodily ego."<br>— Sigmund Freud</p>
+                    </div>
+                    <div class="influences">
+                        <h3>Key Influences</h3>
+                        <div class="influence-list">
+                            <div class="influence-tag">Sigmund Freud</div>
+                            <div class="influence-tag">Mark Solms</div>
+                            <div class="influence-tag">Lisa Feldman Barrett</div>
+                            <div class="influence-tag">Jaak Panksepp</div>
+                            <div class="influence-tag">Karl Friston</div>
+                            <div class="influence-tag">Antonio Damasio</div>
+                            <div class="influence-tag">Anil Seth</div>
+                            <div class="influence-tag">Jeff Hawkins</div>
+                            <div class="influence-tag">Joseph LeDoux</div>
+                            <div class="influence-tag">Robert Sapolsky</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="therapists" id="therapists">
+            <div class="container">
+                <div class="therapist-card">
+                    <h2>Extend your work between sessions</h2>
+                    <p>Cathexis helps clients build body awareness and regulation skills between sessions. The data they collect becomes material for your work together.</p>
+                    <p>Grounded in predictive processing, affective neuroscience, and neuropsychoanalysis. Designed to complement clinical work, not replace it.</p>
+                    <div class="therapist-features">
+                        <div class="therapist-feature"><span>✓</span> Daily interoceptive practice</div>
+                        <div class="therapist-feature"><span>✓</span> Pattern tracking for case conceptualization</div>
+                        <div class="therapist-feature"><span>✓</span> Intervention outcomes data</div>
+                        <div class="therapist-feature"><span>✓</span> Comprehensive PDF reports</div>
+                        <div class="therapist-feature"><span>✓</span> Resolution progress tracking</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="cta">
+            <div class="container">
+                <h2>Start listening to your body</h2>
+                <p>Free to download. Your data stays on your device.</p>
+                <a href="https://apps.apple.com/app/cathexis/id6756632094" class="app-store-btn">
                     <svg viewBox="0 0 24 24" fill="currentColor">
                         <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/>
                     </svg>
                     Download on the App Store
                 </a>
-                
-                <div class="phone-mockup">
-                    <div class="phone-placeholder">
-                        Screenshot coming soon
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="features">
-            <div class="container">
-                <h2>How it works</h2>
-                <p>Simple, effective, body-first healing</p>
-                
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">👆</div>
-                        <h3>Notice where you feel it</h3>
-                        <p>Tap the body region where you're holding tension, stress, or discomfort.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">🎯</div>
-                        <h3>Get matched interventions</h3>
-                        <p>Choose from 40+ embodied techniques specifically matched to your needs.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">🧘</div>
-                        <h3>Follow guided sessions</h3>
-                        <p>Voice guidance, calming visuals, and gentle haptics guide you through each exercise.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">📊</div>
-                        <h3>Track your patterns</h3>
-                        <p>Learn what your body is telling you with insights that reveal patterns over time.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="techniques">
-            <div class="container">
-                <h2>40+ Embodied Techniques</h2>
-                
-                <div class="technique-tags">
-                    <div class="technique-tag">Box Breathing</div>
-                    <div class="technique-tag">Physiological Sigh</div>
-                    <div class="technique-tag">4-7-8 Breathing</div>
-                    <div class="technique-tag">Butterfly Hug</div>
-                    <div class="technique-tag">Bilateral Tapping</div>
-                    <div class="technique-tag">5-4-3-2-1 Grounding</div>
-                    <div class="technique-tag">Body Scan</div>
-                    <div class="technique-tag">Progressive Relaxation</div>
-                    <div class="technique-tag">Urge Surfing</div>
-                    <div class="technique-tag">Container Visualization</div>
-                    <div class="technique-tag">Tension Release</div>
-                    <div class="technique-tag">Anchoring</div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="therapist">
-            <div class="container">
-                <div class="therapist-card">
-                    <h3>Built on clinical practice</h3>
-                    <p>Every technique in Cathexis comes from real interventions used with real clients. This isn't generic meditation—it's targeted, body-based healing grounded in neuroscience.</p>
-                </div>
             </div>
         </section>
     </main>
     
     <footer>
         <div class="container">
-            <div class="footer-links">
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Service</a>
-                <a href="mailto:cathexisapp@gmail.com">Contact</a>
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="mailto:support@cathexis.health">Contact</a>
+                </div>
+                <p class="copyright">© 2025 Cathexis. All rights reserved.</p>
             </div>
-            <p class="copyright">© 2024 Cathexis. All rights reserved.</p>
+            <p class="disclaimer">Cathexis is a body awareness tool, not a medical device. It does not diagnose or treat any condition. If you're in crisis, contact 988 or emergency services.</p>
         </div>
     </footer>
 </body>
