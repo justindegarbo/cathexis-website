@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cathexis - Your Body Speaks. Learn to Listen.</title>
-    <meta name="description" content="Cathexis builds interoceptive awareness — the skill of sensing and understanding your body's signals. Grounded in neuroscience, not wellness trends.">
+    <title>Cathexis - Built by a Therapist</title>
+    <meta name="description" content="For what you're carrying. 35 programs for real struggles — anxiety, grief, panic, depression, and more. Built by a therapist. $9.99/month.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -83,10 +83,10 @@
         .hero-content { width: 100%; }
         
         .hero h1 {
-            font-size: clamp(44px, 8vw, 72px);
+            font-size: clamp(36px, 7vw, 64px);
             font-weight: 700;
-            line-height: 1.05;
-            letter-spacing: -3px;
+            line-height: 1.1;
+            letter-spacing: -2px;
             margin-bottom: 24px;
         }
         
@@ -101,8 +101,15 @@
             font-size: 20px;
             color: var(--text-secondary);
             max-width: 600px;
-            margin: 0 auto 40px;
+            margin: 0 auto 16px;
             line-height: 1.6;
+        }
+        
+        .hero-therapist {
+            font-size: 16px;
+            color: var(--accent);
+            margin-bottom: 40px;
+            font-weight: 500;
         }
         
         .app-store-btn {
@@ -130,7 +137,7 @@
         .problem-content { text-align: center; }
         
         .problem h2 {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 400;
             line-height: 1.5;
             max-width: 700px;
@@ -145,13 +152,12 @@
         }
         
         .problem-highlight {
-            font-size: 24px;
-            font-weight: 600;
+            font-size: 22px;
+            font-weight: 500;
             color: var(--accent);
-            font-style: italic;
         }
         
-        .circle-section { padding: 120px 0; }
+        .programs-section { padding: 120px 0; }
         
         .section-header { text-align: center; margin-bottom: 64px; }
         .section-header h2 {
@@ -162,196 +168,190 @@
         }
         .section-header p { font-size: 18px; color: var(--text-secondary); }
         
-        .circle-steps {
+        .programs-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 24px;
-            max-width: 1000px;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
         
-        .circle-step {
+        .program-card {
             background: var(--card-bg);
+            border-radius: 16px;
+            padding: 24px;
             border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 20px;
-            padding: 32px 24px;
-            text-align: center;
-            position: relative;
-        }
-        
-        .circle-step::after {
-            content: '→';
-            position: absolute;
-            right: -18px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-muted);
-            font-size: 20px;
-        }
-        
-        .circle-step:last-child::after { display: none; }
-        
-        .step-number {
-            width: 40px;
-            height: 40px;
-            background: rgba(126, 184, 218, 0.15);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 16px;
-            font-weight: 700;
-            color: var(--accent);
-            font-size: 18px;
-        }
-        
-        .circle-step h3 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .circle-step p { font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
-        
-        .features { padding: 120px 0; background: var(--bg-section); }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 32px;
-        }
-        
-        .feature-card {
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 24px;
-            padding: 36px;
             transition: transform 0.2s, border-color 0.2s;
         }
         
-        .feature-card:hover {
+        .program-card:hover {
             transform: translateY(-4px);
-            border-color: rgba(126, 184, 218, 0.3);
+            border-color: var(--accent);
         }
         
-        .feature-icon {
-            width: 56px;
-            height: 56px;
-            background: rgba(126, 184, 218, 0.1);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 24px;
-            font-size: 28px;
+        .program-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
         }
         
-        .feature-card h3 { font-size: 20px; font-weight: 600; margin-bottom: 12px; }
-        .feature-card p { color: var(--text-secondary); font-size: 15px; line-height: 1.6; }
-        
-        .science { padding: 120px 0; }
-        
-        .science-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 64px;
-            align-items: center;
+        .program-card p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.5;
         }
         
-        .science-text h2 {
+        .more-programs {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+        
+        .more-programs strong {
+            color: var(--text-primary);
+        }
+        
+        .how-section { padding: 120px 0; background: var(--bg-section); }
+        
+        .how-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .how-content h2 {
             font-size: 36px;
             font-weight: 700;
             letter-spacing: -1px;
-            margin-bottom: 24px;
-        }
-        
-        .science-text p { color: var(--text-secondary); margin-bottom: 16px; font-size: 16px; }
-        
-        .science-text .quote {
-            font-style: italic;
-            color: var(--accent);
-            font-size: 18px;
-            margin-top: 24px;
-            padding-left: 20px;
-            border-left: 3px solid var(--accent);
-        }
-        
-        .influences {
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 24px;
-            padding: 36px;
-        }
-        
-        .influences h3 {
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-        }
-        
-        .influence-list { display: flex; flex-wrap: wrap; gap: 12px; }
-        
-        .influence-tag {
-            padding: 8px 16px;
-            background: rgba(126, 184, 218, 0.1);
-            border-radius: 8px;
-            font-size: 13px;
-            color: var(--text-secondary);
-        }
-        
-        .therapists { padding: 120px 0; background: var(--bg-section); }
-        
-        .therapist-card {
-            max-width: 800px;
-            margin: 0 auto;
-            background: linear-gradient(135deg, rgba(126, 184, 218, 0.1) 0%, rgba(126, 184, 218, 0.02) 100%);
-            border: 1px solid rgba(126, 184, 218, 0.2);
-            border-radius: 32px;
-            padding: 60px;
+            margin-bottom: 32px;
             text-align: center;
         }
         
-        .therapist-card h2 { font-size: 32px; font-weight: 700; margin-bottom: 20px; }
+        .how-step {
+            margin-bottom: 32px;
+        }
         
-        .therapist-card p {
+        .how-step h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        
+        .how-step p {
             color: var(--text-secondary);
-            font-size: 17px;
-            margin-bottom: 16px;
+            font-size: 16px;
+        }
+        
+        .different-section { padding: 120px 0; }
+        
+        .different-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .different-card {
+            text-align: center;
+            padding: 32px;
+        }
+        
+        .different-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .different-card p {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+        
+        .price-section { padding: 120px 0; background: var(--bg-section); }
+        
+        .price-card {
+            background: linear-gradient(135deg, rgba(126, 184, 218, 0.1) 0%, rgba(218, 160, 126, 0.1) 100%);
+            border: 1px solid rgba(126, 184, 218, 0.2);
+            border-radius: 24px;
+            padding: 48px;
+            text-align: center;
             max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
         }
         
-        .therapist-features {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 16px;
-            margin-top: 32px;
+        .price-card h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
         }
         
-        .therapist-feature {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 18px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            font-size: 14px;
+        .price-card .price {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+        
+        .price-card .price-sub {
             color: var(--text-secondary);
+            margin-bottom: 24px;
         }
         
-        .therapist-feature span { color: var(--accent); }
+        .price-card .comparison {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 32px;
+        }
         
-        .cta { padding: 120px 0; text-align: center; }
-        .cta h2 { font-size: 44px; font-weight: 700; letter-spacing: -1.5px; margin-bottom: 16px; }
-        .cta p { color: var(--text-secondary); font-size: 18px; margin-bottom: 40px; }
+        .therapist-section { padding: 120px 0; }
         
-        footer { padding: 48px 0; border-top: 1px solid rgba(255, 255, 255, 0.06); }
+        .therapist-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .therapist-content h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+        
+        .therapist-content p {
+            color: var(--text-secondary);
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+        
+        .therapist-content .signature {
+            margin-top: 32px;
+            font-style: italic;
+            color: var(--text-muted);
+        }
+        
+        .cta {
+            padding: 120px 0;
+            text-align: center;
+            background: var(--bg-section);
+        }
+        
+        .cta h2 {
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+        }
+        
+        .cta p {
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            font-size: 18px;
+        }
+        
+        footer {
+            padding: 48px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
         
         .footer-content {
             display: flex;
@@ -359,43 +359,42 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 24px;
+            margin-bottom: 24px;
         }
         
-        .footer-links { display: flex; gap: 32px; }
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        
         .footer-links a {
             color: var(--text-muted);
             text-decoration: none;
             font-size: 14px;
-            transition: color 0.2s;
         }
+        
         .footer-links a:hover { color: var(--text-primary); }
         
-        .copyright { color: var(--text-muted); font-size: 13px; }
+        .copyright {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
         
         .disclaimer {
-            margin-top: 24px;
-            padding-top: 24px;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-            font-size: 12px;
             color: var(--text-muted);
+            font-size: 12px;
             text-align: center;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 600px;
+            margin: 0 auto;
         }
         
         @media (max-width: 768px) {
             nav { display: none; }
-            .hero { padding: 120px 0 80px; min-height: auto; }
-            .hero h1 { font-size: 36px; letter-spacing: -1.5px; }
-            .hero-subtitle { font-size: 17px; }
-            .problem h2 { font-size: 24px; }
-            .section-header h2 { font-size: 28px; }
-            .circle-step::after { display: none; }
-            .science-content { grid-template-columns: 1fr; gap: 40px; }
-            .therapist-card { padding: 40px 24px; }
-            .cta h2 { font-size: 32px; }
-            .footer-content { flex-direction: column; text-align: center; }
+            .hero h1 { letter-spacing: -1px; }
+            .programs-grid { grid-template-columns: 1fr; }
+            .different-grid { grid-template-columns: 1fr; }
+            .footer-content { justify-content: center; text-align: center; }
         }
     </style>
 </head>
@@ -405,12 +404,12 @@
     <header>
         <div class="container">
             <div class="header-inner">
-                <a href="index.html" class="logo">Cathexis</a>
+                <a href="/" class="logo">Cathexis</a>
                 <nav>
-                    <a href="#how-it-works">How It Works</a>
-                    <a href="#features">Features</a>
-                    <a href="#science">The Science</a>
-                    <a href="#therapists">For Therapists</a>
+                    <a href="#programs">Programs</a>
+                    <a href="#how">How It Works</a>
+                    <a href="#different">Why It's Different</a>
+                    <a href="#pricing">Pricing</a>
                 </nav>
             </div>
         </div>
@@ -420,13 +419,14 @@
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1><span>Your body speaks.</span><br>Learn to listen.</h1>
-                    <p class="hero-subtitle">Cathexis builds interoceptive awareness — the skill of sensing and understanding your body's signals. Through guided check-ins, targeted interventions, and pattern tracking, transform body noise into body wisdom.</p>
+                    <h1><span>For the weight you carry.</span><br>For the thoughts that won't stop.</h1>
+                    <p class="hero-subtitle">35 programs for real struggles — anxiety, grief, panic, depression, chronic pain, and more. Not generic meditation. Real tools.</p>
+                    <p class="hero-therapist">Built by a therapist. $9.99/month.</p>
                     <a href="https://apps.apple.com/app/cathexis/id6756632094" class="app-store-btn">
                         <svg viewBox="0 0 24 24" fill="currentColor">
                             <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/>
                         </svg>
-                        Download on the App Store
+                        Download Free — 7 Day Trial
                     </a>
                 </div>
             </div>
@@ -435,140 +435,150 @@
         <section class="problem">
             <div class="container-narrow">
                 <div class="problem-content">
-                    <h2>That tightness in your chest. The knot in your stomach. The tension you carry in your shoulders. <em>These aren't random. They're information.</em></h2>
-                    <p class="problem-highlight">What if you could hear what your body is trying to tell you?</p>
+                    <h2>Therapy costs $150-300 per session. Waitlists stretch for months. And for the <em>60% of people who never access professional help</em>, the alternative is... apps that feel like they were made for people who are already fine.</h2>
+                    <p class="problem-highlight">You deserve something better than nothing.</p>
                 </div>
             </div>
         </section>
-        
-        <section class="circle-section" id="how-it-works">
+
+        <section class="programs-section" id="programs">
             <div class="container">
                 <div class="section-header">
-                    <h2>The Circle of Awareness</h2>
-                    <p>Five steps that turn body awareness into body wisdom</p>
+                    <h2>Programs for Real Struggles</h2>
+                    <p>Not generic wellness. 30-day programs designed for what you're actually going through.</p>
                 </div>
                 
-                <div class="circle-steps">
-                    <div class="circle-step">
-                        <div class="step-number">1</div>
-                        <h3>Notice</h3>
-                        <p>Pause. Where is sensation right now? The check-in is where everything begins.</p>
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <h3>😰 Anxiety & Worry</h3>
+                        <p>For the thoughts that won't stop. The what-ifs. The 3am spirals. Learn to notice the pattern without getting swept away.</p>
                     </div>
-                    <div class="circle-step">
-                        <div class="step-number">2</div>
-                        <h3>Track</h3>
-                        <p>Your check-ins become patterns. See what single moments miss.</p>
+                    <div class="program-card">
+                        <h3>💔 Grief & Loss</h3>
+                        <p>Grief comes in waves, not stages. This isn't about "getting over it" — it's about learning to carry it.</p>
                     </div>
-                    <div class="circle-step">
-                        <div class="step-number">3</div>
-                        <h3>Intervene</h3>
-                        <p>Breathing, grounding, movement. Each technique with a why.</p>
+                    <div class="program-card">
+                        <h3>⚡ Panic & Fear</h3>
+                        <p>When your body sounds the alarm for danger that isn't there. Build the capacity to ride it out.</p>
                     </div>
-                    <div class="circle-step">
-                        <div class="step-number">4</div>
-                        <h3>Reflect</h3>
-                        <p>Journal prompts connect body experience to meaning.</p>
+                    <div class="program-card">
+                        <h3>🌧️ Depression & Low Mood</h3>
+                        <p>When everything feels heavy. Small movements. Realistic expectations. No toxic positivity.</p>
                     </div>
-                    <div class="circle-step">
-                        <div class="step-number">5</div>
-                        <h3>Resolve</h3>
-                        <p>Track progress on your original concerns over time.</p>
+                    <div class="program-card">
+                        <h3>🔥 Chronic Pain</h3>
+                        <p>Pain you've learned to hide. This won't make it disappear — but it can change your relationship with it.</p>
+                    </div>
+                    <div class="program-card">
+                        <h3>🌀 Trauma</h3>
+                        <p>For what you're not ready to talk about. Safety first. Resources before activation. At your own pace.</p>
+                    </div>
+                    <div class="program-card">
+                        <h3>🤰 Postpartum</h3>
+                        <p>The identity shift no one warned you about. This isn't a problem to solve — it's reconstruction.</p>
+                    </div>
+                    <div class="program-card">
+                        <h3>💊 Recovery</h3>
+                        <p>One day at a time. Urge surfing. HALT. Tools for when willpower isn't enough.</p>
+                    </div>
+                    <div class="program-card">
+                        <h3>🎭 People Pleasing</h3>
+                        <p>The "yes" that costs you. The needs you've buried. Finding the pause before the automatic response.</p>
+                    </div>
+                </div>
+                
+                <p class="more-programs">Plus: Caregiving, Loneliness, Sleep, Life Transitions, Inner Critic, and <strong>26 more programs</strong>. Also: <strong>25 single-day modules</strong> for acute moments — fresh loss, panic recovery, shame spirals, and more.</p>
+            </div>
+        </section>
+        
+        <section class="how-section" id="how">
+            <div class="container">
+                <div class="how-content">
+                    <h2>How It Works</h2>
+                    
+                    <div class="how-step">
+                        <h3>Check in</h3>
+                        <p>Notice what's happening in your body. Not to fix it — just to see it. Where's the tension? What's the quality? This takes 2 minutes.</p>
+                    </div>
+                    
+                    <div class="how-step">
+                        <h3>Learn something</h3>
+                        <p>Each day brings a piece of understanding. Why anxiety feels the way it does. What grief is actually doing. Short reads that change how you see yourself.</p>
+                    </div>
+                    
+                    <div class="how-step">
+                        <h3>Practice something</h3>
+                        <p>149 guided practices — breathing, grounding, movement — matched to how you actually feel right now. Not random meditation. Targeted tools.</p>
+                    </div>
+                    
+                    <div class="how-step">
+                        <h3>See your patterns</h3>
+                        <p>Over time, connections emerge. "I always feel this way on Sunday nights." "This usually follows that." The app shows you patterns — you decide what they mean.</p>
                     </div>
                 </div>
             </div>
         </section>
         
-        <section class="features" id="features">
+        <section class="different-section" id="different">
             <div class="container">
                 <div class="section-header">
-                    <h2>What You Get</h2>
-                    <p>Tools for building a relationship with your body</p>
+                    <h2>Why This Is Different</h2>
                 </div>
                 
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">🫀</div>
-                        <h3>Interactive Body Map</h3>
-                        <p>Tap where you feel sensation. Your body becomes a map of data — showing you where life lands, where tension lives, where emotion hides.</p>
+                <div class="different-grid">
+                    <div class="different-card">
+                        <h3>Built by a therapist</h3>
+                        <p>Not a tech company. Not a wellness brand. A practicing therapist who got tired of having nothing good to recommend between sessions.</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🌬️</div>
-                        <h3>39 Guided Interventions</h3>
-                        <p>Breathing, grounding, movement, and bilateral stimulation techniques — each with audio guidance and the science of why it works.</p>
+                    <div class="different-card">
+                        <h3>No AI making decisions</h3>
+                        <p>The app surfaces patterns. That's it. No algorithm telling you what your feelings mean. You stay in the driver's seat.</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📊</div>
-                        <h3>Pattern Insights</h3>
-                        <p>See how your nervous system runs. Discover which influences land where. Track your most effective interventions over time.</p>
+                    <div class="different-card">
+                        <h3>Designed to be outgrown</h3>
+                        <p>Most apps want you hooked forever. This one wants you to build skills and leave. Success = you delete the app.</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🔔</div>
-                        <h3>Smart Notifications</h3>
-                        <p>Gentle reminders based on your patterns, activity, and streaks. The app notices when you might need support.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📝</div>
-                        <h3>Journal & Reflection</h3>
-                        <p>Drive-based prompts help you connect body experience to life experience. What was your body trying to tell you?</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📄</div>
-                        <h3>Therapist Reports</h3>
-                        <p>Generate comprehensive PDF reports to share with your therapist — patterns, interventions, progress, and journal entries.</p>
+                    <div class="different-card">
+                        <h3>Your data stays yours</h3>
+                        <p>Everything lives on your device. No accounts. No cloud. No tracking. Nothing to breach because there's nothing to collect.</p>
                     </div>
                 </div>
             </div>
         </section>
         
-        <section class="science" id="science">
+        <section class="price-section" id="pricing">
             <div class="container">
-                <div class="science-content">
-                    <div class="science-text">
-                        <h2>Built on decades of neuroscience research</h2>
-                        <p>Cathexis integrates insights from affective neuroscience, predictive processing theory, and neuropsychoanalysis. Every technique has a mechanism. Every feature has a purpose.</p>
-                        <p>The body is the origin of psychic life — not a container for the mind, but the source from which mind emerges.</p>
-                        <p class="quote">"The ego is first and foremost a bodily ego."<br>— Sigmund Freud</p>
-                    </div>
-                    <div class="influences">
-                        <h3>Key Influences</h3>
-                        <div class="influence-list">
-                            <div class="influence-tag">Sigmund Freud</div>
-                            <div class="influence-tag">Mark Solms</div>
-                            <div class="influence-tag">Lisa Feldman Barrett</div>
-                            <div class="influence-tag">Jaak Panksepp</div>
-                            <div class="influence-tag">Karl Friston</div>
-                            <div class="influence-tag">Antonio Damasio</div>
-                            <div class="influence-tag">Anil Seth</div>
-                            <div class="influence-tag">Jeff Hawkins</div>
-                            <div class="influence-tag">Joseph LeDoux</div>
-                            <div class="influence-tag">Robert Sapolsky</div>
-                        </div>
-                    </div>
+                <div class="price-card">
+                    <h2>Affordable on purpose</h2>
+                    <div class="price">$9.99<span style="font-size: 24px; font-weight: 400;">/month</span></div>
+                    <p class="price-sub">or $149.99 lifetime</p>
+                    <p class="comparison">That's what a therapist charges for about 4 minutes.<br>You get 30 days of structured practice, 149 tools, and support for whatever you're carrying.</p>
+                    <a href="https://apps.apple.com/app/cathexis/id6756632094" class="app-store-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/>
+                        </svg>
+                        Start Free Trial
+                    </a>
                 </div>
             </div>
         </section>
         
-        <section class="therapists" id="therapists">
+        <section class="therapist-section">
             <div class="container">
-                <div class="therapist-card">
-                    <h2>Extend your work between sessions</h2>
-                    <p>Cathexis helps clients build body awareness and regulation skills between sessions. The data they collect becomes material for your work together.</p>
-                    <p>Grounded in predictive processing, affective neuroscience, and neuropsychoanalysis. Designed to complement clinical work, not replace it.</p>
-                    <div class="therapist-features">
-                        <div class="therapist-feature"><span>✓</span> Daily interoceptive practice</div>
-                        <div class="therapist-feature"><span>✓</span> Pattern tracking for case conceptualization</div>
-                        <div class="therapist-feature"><span>✓</span> Intervention outcomes data</div>
-                        <div class="therapist-feature"><span>✓</span> Comprehensive PDF reports</div>
-                        <div class="therapist-feature"><span>✓</span> Resolution progress tracking</div>
-                    </div>
+                <div class="therapist-content">
+                    <h2>A note from the creator</h2>
+                    <p>I'm a therapist. I built Cathexis because I kept wishing my clients had something better between sessions. Something more than journaling. Something designed for real struggles, not generic wellness.</p>
+                    <p>The app is grounded in research — how the brain makes predictions, how emotions are built, how the body carries experience. But you don't need to know any of that. The depth is there if you want it. If not, it just works.</p>
+                    <p>This isn't a replacement for therapy. If you can access professional care, please do. But if you can't right now — cost, waitlists, whatever the reason — you deserve something better than nothing.</p>
+                    <p class="signature">— Built by a therapist. Designed to be outgrown.</p>
                 </div>
             </div>
         </section>
         
         <section class="cta">
             <div class="container">
-                <h2>Start listening to your body</h2>
-                <p>Free to download. Your data stays on your device.</p>
+                <h2>You're not broken. You're carrying something heavy.</h2>
+                <p>Let's work on it together.</p>
                 <a href="https://apps.apple.com/app/cathexis/id6756632094" class="app-store-btn">
                     <svg viewBox="0 0 24 24" fill="currentColor">
                         <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/>
@@ -587,9 +597,9 @@
                     <a href="terms.html">Terms of Service</a>
                     <a href="mailto:support@cathexis.health">Contact</a>
                 </div>
-                <p class="copyright">© 2025 Cathexis. All rights reserved.</p>
+                <p class="copyright">© 2026 Cathexis. All rights reserved.</p>
             </div>
-            <p class="disclaimer">Cathexis is a body awareness tool, not a medical device. It does not diagnose or treat any condition. If you're in crisis, contact 988 or emergency services.</p>
+            <p class="disclaimer">Cathexis is a self-help tool, not a replacement for professional care. If you're in crisis, please contact 988 or go to your nearest emergency room.</p>
         </div>
     </footer>
 </body>
